@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Thompson - Portfolio</title>
+    <title>Marc Carrillo - IT Specialist Resume</title>
     <style>
         * {
             margin: 0;
@@ -14,544 +14,487 @@
         :root {
             --primary-color: #2563eb;
             --secondary-color: #1e40af;
-            --accent-color: #f59e0b;
+            --accent-color: #10b981;
             --text-dark: #1f2937;
             --text-light: #6b7280;
             --bg-light: #f9fafb;
             --white: #ffffff;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            --border-color: #e5e7eb;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
-            padding: 8rem 0 6rem;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--accent-color);
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Sections */
-        .section {
-            padding: 5rem 0;
-        }
-
-        .section:nth-child(even) {
             background: var(--bg-light);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--text-dark);
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-image {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 6rem;
-            color: white;
-            margin: 0 auto;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .skill-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--primary-color);
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        /* Portfolio Section */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .portfolio-item {
-            background: white;
+        .resume-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
         }
 
-        .portfolio-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .portfolio-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
-            font-size: 2rem;
+            padding: 3rem 2rem;
+            text-align: center;
         }
 
-        .portfolio-content {
-            padding: 1.5rem;
-        }
-
-        .portfolio-title {
-            font-size: 1.25rem;
-            font-weight: 600;
+        .header h1 {
+            font-size: 2.5rem;
             margin-bottom: 0.5rem;
+            font-weight: 700;
         }
 
-        .portfolio-description {
-            color: var(--text-light);
-            margin-bottom: 1rem;
+        .header h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            font-weight: 400;
         }
 
-        .portfolio-tech {
+        .contact-info {
             display: flex;
-            gap: 0.5rem;
+            justify-content: center;
+            gap: 2rem;
             flex-wrap: wrap;
         }
 
-        .tech-tag {
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Summary */
+        .summary {
             background: var(--bg-light);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .job-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .company {
+            font-weight: 600;
             color: var(--primary-color);
         }
 
-        /* Contact Section */
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
+        .job-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
         }
 
-        .contact-form {
-            display: grid;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .form-group {
-            display: grid;
-            gap: 0.5rem;
-        }
-
-        .form-group label {
-            font-weight: 600;
-            text-align: left;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            padding: 1rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-
-        .submit-btn {
-            background: var(--primary-color);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            background: var(--secondary-color);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--text-dark);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
+        .job-description {
+            color: var(--text-light);
             margin-bottom: 1rem;
         }
 
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background: var(--primary-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
+        .job-achievements {
+            list-style: none;
         }
 
-        .social-link:hover {
-            background: var(--accent-color);
+        .job-achievements li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .job-achievements li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-category h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 0.25rem 0;
+            color: var(--text-dark);
+        }
+
+        .skill-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Education */
+        .education-item {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .degree {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .school {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .education-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .education-details {
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        /* Awards */
+        .awards {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .award-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .award-icon {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        /* Languages */
+        .languages {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .language-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .resume-container {
+                margin: 1rem;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
+            .header {
+                padding: 2rem 1rem;
             }
 
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .section-title {
+            .header h1 {
                 font-size: 2rem;
+            }
+
+            .main-content {
+                padding: 1.5rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">AT</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Alex Thompson</h1>
-            <p>Full-Stack Developer & UI/UX Designer crafting digital experiences that make a difference</p>
-            <a href="#portfolio" class="cta-button">View My Work</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-image">👨‍💻</div>
-                <div class="about-text">
-                    <p>I'm a passionate full-stack developer with over 5 years of experience creating innovative web applications and user interfaces. My journey began with a fascination for problem-solving and has evolved into a career dedicated to building seamless digital experiences.</p>
-                    <p>I specialize in modern web technologies and have a keen eye for design. When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying a good cup of coffee while sketching out my next big idea.</p>
+    <div class="resume-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Marc Carrillo</h1>
+            <h2>IT Specialist & Technical Support Professional</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Riverside, CA 92509</span>
+                </div>
+                <div class="contact-item">
+                    <span>📞</span>
+                    <span>(951) 236-4390</span>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <span>marc.acarrillo@outlook.com</span>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title">Skills & Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">🚀</div>
-                    <h3>Frontend Development</h3>
-                    <p>React, Vue.js, JavaScript, HTML5, CSS3, Tailwind CSS</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">⚙️</div>
-                    <h3>Backend Development</h3>
-                    <p>Node.js, Python, Express, PostgreSQL, MongoDB</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🎨</div>
-                    <h3>UI/UX Design</h3>
-                    <p>Figma, Adobe XD, Prototyping, User Research</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">☁️</div>
-                    <h3>Cloud & DevOps</h3>
-                    <p>AWS, Docker, CI/CD, Git, Linux</p>
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Summary -->
+            <div class="section">
+                <h3 class="section-title">Professional Summary</h3>
+                <div class="summary">
+                    <p>Dedicated IT Specialist with 1+ years of experience in technical support and customer service. Proven expertise in troubleshooting hardware/software issues, providing exceptional customer support, and maintaining technical documentation. Strong foundation in programming languages and operating systems with a passion for problem-solving and continuous learning in the IT field.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-image">📱</div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">E-Commerce Platform</h3>
-                        <p class="portfolio-description">A full-featured e-commerce solution with real-time inventory management and payment processing.</p>
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Stripe</span>
+            <!-- Experience -->
+            <div class="section">
+                <h3 class="section-title">Professional Experience</h3>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Program Leader</div>
+                            <div class="company">Think Together, Riverside</div>
                         </div>
+                        <div class="job-date">August 2024 - Present</div>
                     </div>
+                    <div class="job-description">Educational technology support and program management</div>
+                    <ul class="job-achievements">
+                        <li>Provide technical support for educational software and digital learning platforms</li>
+                        <li>Assist students and staff with computer-related issues and software troubleshooting</li>
+                        <li>Maintain and configure educational technology equipment and devices</li>
+                        <li>Create and manage digital curriculum materials and learning resources</li>
+                        <li>Demonstrate strong leadership and communication skills in technical training environments</li>
+                    </ul>
                 </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">📊</div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Analytics Dashboard</h3>
-                        <p class="portfolio-description">Interactive data visualization dashboard for business intelligence and reporting.</p>
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">D3.js</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">PostgreSQL</span>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Technical Support Specialist</div>
+                            <div class="company">Spectrum, Riverside</div>
                         </div>
+                        <div class="job-date">November 2020 - October 2021</div>
                     </div>
+                    <div class="job-description">Advanced technical support and customer service for telecommunications</div>
+                    <ul class="job-achievements">
+                        <li>Diagnosed and resolved complex internet connectivity and network infrastructure issues</li>
+                        <li>Provided remote technical support for residential and business customers</li>
+                        <li>Utilized advanced troubleshooting methodologies to resolve customer technical concerns</li>
+                        <li>Managed customer accounts and service configurations through proprietary software systems</li>
+                        <li>Maintained detailed technical documentation and customer interaction records</li>
+                        <li>Continuously updated technical knowledge to provide cutting-edge customer solutions</li>
+                    </ul>
                 </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">🏥</div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Healthcare App</h3>
-                        <p class="portfolio-description">Mobile-first application for patient management and appointment scheduling.</p>
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">React Native</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">TypeScript</span>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Technology Sales Specialist</div>
+                            <div class="company">Best Buy, Riverside</div>
                         </div>
+                        <div class="job-date">September 2020 - December 2020</div>
+                    </div>
+                    <div class="job-description">Technical sales and product consultation in consumer electronics</div>
+                    <ul class="job-achievements">
+                        <li>Provided technical consultation and product demonstrations for complex technology solutions</li>
+                        <li>Resolved customer technical questions and provided comprehensive product recommendations</li>
+                        <li>Stayed current with emerging technologies and product specifications</li>
+                        <li>Delivered end-to-end technical solutions across multiple product categories and services</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Inventory Systems Specialist</div>
+                            <div class="company">Walmart, Riverside</div>
+                        </div>
+                        <div class="job-date">October 2019 - September 2020</div>
+                    </div>
+                    <div class="job-description">Inventory management and customer service operations</div>
+                    <ul class="job-achievements">
+                        <li>Managed inventory systems and database operations for product tracking</li>
+                        <li>Utilized mobile devices and handheld scanners for inventory management</li>
+                        <li>Provided technical assistance to customers regarding product availability and specifications</li>
+                        <li>Maintained organized product displays and inventory accuracy</li>
+                        <li>Recognized as Employee of the Month for exceptional performance and technical efficiency</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="section">
+                <h3 class="section-title">Technical Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Programming Languages</h4>
+                        <ul class="skill-list">
+                            <li>HTML5 & CSS3</li>
+                            <li>Python</li>
+                            <li>C++</li>
+                            <li>JavaScript</li>
+                            <li>Git Version Control</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Operating Systems</h4>
+                        <ul class="skill-list">
+                            <li>Windows 10/11</li>
+                            <li>macOS</li>
+                            <li>iOS</li>
+                            <li>Linux (Basic)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Software & Tools</h4>
+                        <ul class="skill-list">
+                            <li>Microsoft Office Suite</li>
+                            <li>Data Analysis & Management</li>
+                            <li>Technical Documentation</li>
+                            <li>Remote Support Tools</li>
+                            <li>Inventory Management Systems</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Technical Support</h4>
+                        <ul class="skill-list">
+                            <li>Hardware Troubleshooting</li>
+                            <li>Software Installation & Configuration</li>
+                            <li>Network Diagnostics</li>
+                            <li>Customer Service Excellence</li>
+                            <li>Problem-Solving Methodologies</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Let's Work Together</h2>
-            <div class="contact-content">
-                <p>I'm always interested in new opportunities and exciting projects. Let's discuss how we can bring your ideas to life.</p>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+            <!-- Education -->
+            <div class="section">
+                <h3 class="section-title">Education</h3>
+                <div class="education-item">
+                    <div class="education-header">
+                        <div>
+                            <div class="degree">Computer Science for Transfer</div>
+                            <div class="school">Chaffey College, Rancho Cucamonga</div>
+                        </div>
+                        <div class="education-date">January 2022 - Present</div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                    <div class="education-details">
+                        <p><strong>Status:</strong> In Progress</p>
+                        <p><strong>Completed:</strong> 66 units in Mathematics and Computer Information Systems</p>
+                        <p><strong>Focus Areas:</strong> Programming Fundamentals, Data Structures, Computer Architecture, Mathematics for Computing</p>
                     </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required>
+                </div>
+            </div>
+
+            <!-- Awards -->
+            <div class="section">
+                <h3 class="section-title">Awards & Recognition</h3>
+                <div class="awards">
+                    <div class="award-item">
+                        <span class="award-icon">🏆</span>
+                        <span><strong>Employee of the Month</strong> - Walmart (2020)</span>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
+                </div>
+            </div>
+
+            <!-- Languages -->
+            <div class="section">
+                <h3 class="section-title">Languages</h3>
+                <div class="languages">
+                    <span class="language-tag">English (Native)</span>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="#" class="social-link">📧</a>
-                <a href="#" class="social-link">💼</a>
-                <a href="#" class="social-link">🐙</a>
-                <a href="#" class="social-link">🐦</a>
-            </div>
-            <p>&copy; 2024 Alex Thompson. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Form submission handler
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            this.reset();
-        });
-
-        // Add scroll effect to navigation
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                nav.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
-        });
-    </script>
+    </div>
 </body>
 </html>
